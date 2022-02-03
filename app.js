@@ -1,6 +1,14 @@
 const express= require('express')
+const mongoose = require('mongoose');
 const app = express();
 const port = 3000
+const DB = 'mongodb+srv://Siddharth:siddharth@NO1@app.nk9a5.mongodb.net/appdev?retryWrites=true&w=majority'
+mongoose.connect(DB).then(() =>
+{
+    console.log(`connection success`);
+}).catch((err) => console.log(`no connection`));
+
+
 
 app.use(express.static('public'))
 app.use('/css',express.static(__dirname + 'public/css'))
