@@ -3,12 +3,18 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 3000
 const DB = 'mongodb+srv://Siddharth:siddharth@NO1@app.nk9a5.mongodb.net/appdev?retryWrites=true&w=majority'
-mongoose.connect(DB).then(() =>
-{
-    console.log(`connection success`);
-}).catch((err) => console.log(`no connection`));
+require("dotenv").config()
+const uri = process.env.MONGODB_CONNECTION_STRING;
+mongoose.connect(uri,{
+    useNewUrlParser: true,
+    // useCreateIndex : true,
+    useUnifiedTopology:true,
+});
 
-
+const connection = mongoose.connection;
+connection.once("open" ,() => {
+    console.log("connection success")
+})
 
 app.use(express.static('public'))
 app.use('/css',express.static(__dirname + 'public/css'))
