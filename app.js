@@ -1,4 +1,5 @@
 const express= require('express')
+var expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose');
 const app = express();
 const port = 3000
@@ -15,6 +16,7 @@ const connection = mongoose.connection;
 connection.once("open" ,() => {
     console.log("connection success")
 })
+
 
 app.use(express.static('public'))
 app.use('/css',express.static(__dirname + 'public/css'))
