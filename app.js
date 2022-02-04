@@ -2,7 +2,7 @@ const express= require('express');
 const { connect } = require('mongoose');
 // const mongoose = require('mongoose');
 const passport = require('passport');
-const {initializingPassport} = require("./passportConfig.js");
+const {initializingPassport,isAuthenticated} = require("./passportConfig.js");
 
 const app = express();
 const port = 3000
@@ -70,10 +70,18 @@ app.get('/register',(req,res) =>{
     
 })
 
-app.post("/login",passport.authenticate("local",{failureRedirect: "/register"}
-), async (req,res)=>{
-
+app.get("/profile",isAuthenticated, (req,res) =>{
+    res.send(req.user);
 })
+
+app.get("/logout" ,(req,res) => {
+    req.logout();
+    res.redirect("/login")
+})
+
+app.post("/login",passport.authenticate("local",{failureRedirect: "/register",
+ successRedirect : "/"}),
+);
 
 app.post("/register",async (req,res) =>{
     const user = await User.findOne({username: req.body.username});
