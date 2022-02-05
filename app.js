@@ -70,6 +70,11 @@ app.get('/register',(req,res) =>{
     
 })
 
+app.get('/loggedHome',(req,res) =>{//loged in home
+    res.render('loggedHome')
+    
+})
+
 app.get("/profile",isAuthenticated, (req,res) =>{
     res.send(req.user);
 })
@@ -80,7 +85,7 @@ app.get("/logout" ,(req,res) => {
 })
 
 app.post("/login",passport.authenticate("local",{failureRedirect: "/register",
- successRedirect : "/"}),
+ successRedirect : "/loggedHome"}),
 );
 
 app.post("/register",async (req,res) =>{
