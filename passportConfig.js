@@ -1,5 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const req = require('express/lib/request');
+const { append } = require('express/lib/response');
 const {User} = require('./database');
 exports.initializingPassport = (passport)=>{
 
@@ -18,6 +19,7 @@ return done(null,user);
 })
 );
 
+
 passport.serializeUser((user,done) =>{
     done(null,user.id);
 });
@@ -32,7 +34,8 @@ passport.deserializeUser(async(id,done) =>{
 })
 };
 
-exports.isAuthenticated = (Req,res,next) => {
+exports.isAuthenticated = (req,res,next) => {
+   
     if(req.user) return next();
 
     res.redirect("/login")

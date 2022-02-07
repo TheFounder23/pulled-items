@@ -1,5 +1,7 @@
 
-
+html {
+  scroll-behavior: smooth;
+}
 #background-video {
     width: 100vw;
     height: 100vh;

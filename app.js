@@ -10,6 +10,7 @@ const {connectMongoose,User} = require("./database.js");
 const expressSession = require("express-session");
 connectMongoose();
 
+
 initializingPassport(passport);
 
 app.use(expressSession({secret : "secret",resave :false,
@@ -18,10 +19,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended :true}));
-
 app.use(express.static('public'))
 app.use('/css',express.static(__dirname + 'public/css'))
 app.use('/js',express.static(__dirname + 'public/js'))
@@ -49,19 +48,18 @@ app.get('/developer',(req,res) =>{
     
 })
 
-app.get('/gold',(req,res) =>{
+app.get('/gold',isAuthenticated,(req,res) =>{
     res.render('gold')
     
 })
 
-app.get('/stones',(req,res) =>{
+app.get('/stones',isAuthenticated,(req,res) =>{
     res.render('stones')
     
 })
- app.get('/IND_EX',(req,res) =>{//new
-     res.render('IND_EX')
- })
-app.get('/login',(req,res) =>{//new
+ 
+ 
+app.get('/login',(req,res) =>{ //new
     res.render('login')
 })
 
@@ -70,22 +68,26 @@ app.get('/register',(req,res) =>{
     
 })
 
-app.get('/loggedHome',(req,res) =>{//loged in home
-    res.render('loggedHome')
+app.get('/user',(req,res) =>{
+    res.render('user')
     
 })
 
-app.get("/profile",isAuthenticated, (req,res) =>{
-    res.send(req.user);
-})
 
-app.get("/logout" ,(req,res) => {
+
+
+
+// app.get("/profile",isAuthenticated, (req,res) =>{
+//     res.send(req.user);
+// })
+
+app.get("/logout" ,isAuthenticated,(req,res) => {
     req.logout();
-    res.redirect("/login")
+    res.redirect("/")
 })
 
 app.post("/login",passport.authenticate("local",{failureRedirect: "/register",
- successRedirect : "/loggedHome"}),
+ successRedirect : "/user"}),
 );
 
 app.post("/register",async (req,res) =>{
@@ -97,6 +99,12 @@ app.post("/register",async (req,res) =>{
      res.status(201).send(newUser);
 });
 
+function checkAuthenticated(req,res,next){
+    if(req.isAuthenticated()){
+        return next()
+    }
+    res.redirect('/login')
+}
 
 
 app.listen(port,() => console.info(`listening on port ${port}`))
