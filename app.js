@@ -17,6 +17,10 @@ app.use(expressSession({secret : "secret",resave :false,
 saveUninitialized:false}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.get('*', function(req,res,next){//why is not creating global variable
+    res.locals.user = req.user || null;
+    next();
+});
 
 
 app.use(express.json());
@@ -48,12 +52,12 @@ app.get('/developer',(req,res) =>{
     
 })
 
-app.get('/gold',isAuthenticated,(req,res) =>{
+app.get('/gold',(req,res) =>{
     res.render('gold')
     
 })
 
-app.get('/stones',isAuthenticated,(req,res) =>{
+app.get('/stones',(req,res) =>{
     res.render('stones')
     
 })
@@ -68,11 +72,15 @@ app.get('/register',(req,res) =>{
     
 })
 
-app.get('/user',(req,res) =>{
+app.get('/user',isAuthenticated,(req,res) =>{
     res.render('user')
     
 })
 
+app.get('/store',(req,res) =>{
+    res.render('store')
+    
+})
 
 
 
@@ -96,15 +104,17 @@ app.post("/register",async (req,res) =>{
     if(user) return res.status(400).send("user already exists");
 
     const newUser = await User.create(req.body);
-     res.status(201).send(newUser);
+    res.redirect("/login");
+    //  res.status(201).send(newUser);
 });
 
-function checkAuthenticated(req,res,next){
-    if(req.isAuthenticated()){
-        return next()
-    }
-    res.redirect('/login')
-}
+
+// function checkAuthenticated(req,res,next){
+//     if(req.isAuthenticated()){
+//         return next()
+//     }
+//     res.redirect('/login')
+// }
 
 
 app.listen(port,() => console.info(`listening on port ${port}`))
