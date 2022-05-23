@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+:root {
+  --start-color: #0575E6;
+  --end-color: #021B79;
+  --p-color: #929DA6;
+  --button-background: #0575E6;
+  --input-background: #e4eff8;
+  --radius-50: 50px;
+  --padding-15: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: var(--start-color);
+  background: linear-gradient(to right, var(--start-color), var(--end-color)) no-repeat;
+  font-family: 'Nunito', sans-serif;
+}
+.navbar
+{
+  border-radius: 25px;
+  background-color: black;
+  padding: var(--padding-15);
+  font-size: 20px;
+  border-radius: var(--radius-50);
+  width: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .content {
+  background: black;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.wrapper .content header h1 {
+  font-size: 230%;
+  margin-top: 0;
+}
+.wrapper .content section {
+  color: var(--p-color);
+  font-size: 15px;
+}
+.wrapper .content footer {
+  padding: var(--padding-15);
+}
+.wrapper .content footer input {
+  border: unset;
+  background-color: black;
+  padding: var(--padding-15);
+  font-size: 13px;
+  border-radius: var(--radius-50);
+  width: 250px;
+}
+.wrapper .content footer button {
+  background-color: var(--button-background);
+  color: rgb(3, 3, 3);
+  border: unset;
+  width: 290px;
+  border-radius: var(--radius-50);
+  padding: var(--padding-15);
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+.wrapper .content footer input:focus, .wrapper .content footer button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper .content {
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+    padding: var(--padding-15);
+  }
+  .wrapper .content footer input {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+body,
+html{
+  height: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Nunito', sans-serif;
+}
+body:before,
+.back {
+  /* display: inline-block; */
+  vertical-align: middle;
+  
+}
+body:before {
+  height: 100%;
+  content: '';
+}
+.back,
+.back:before,
+.back:after {
+  cursor: pointer;
+  padding: 0.5em 2em;
+  display: inline-block;
+  background-color: rgb(8, 14, 95);
+  color: rgb(112, 10, 146);
+  border-radius: 6px;
+  position: relative;
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  box-shadow: 0 0 0 rgba(17, 177, 89, 0);
+}
+
+.back:before,
+.back:after {
+  cursor: pointer;
+  position: absolute;
+  content: attr(data-title);
+  z-index: -1;
+}
+
+.back:before {
+  top: -0.1em;
+  right: -0.1em;
+  background-color: black;
+}
+
+.back:after {
+  bottom: -0.1em;
+  left: -0.1em;
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.back:hover {
+  background-color: rgba(127, 157, 181, 1);
+  box-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.5); 
+}
+
+.back:hover:before {
+  top: 0;
+  right: 0;
+}
+.back:hover:after {
+  bottom: 0;
+  left: 0;
+}

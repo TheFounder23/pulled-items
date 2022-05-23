@@ -18,7 +18,7 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand" href="/index">
+      <a class="navbar-brand" href="/">
         <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
         Bootstrap
       </a>
@@ -35,28 +35,17 @@
           <a class="nav-link" href="/contact">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/developer">Developer</a>
+          <a class="nav-link" href="/upload">Add Design</a>
         </li> 
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/developer">Developer</a>
+        </li>  -->
 
         <li class="nav-item">
           <a class="nav-link" href="/collection">View Collection</a>
         </li>
        
-      <% if(!user) { %>
-      <form method="get" action="/register">
-        <button type="submit" class="btn btn-outline-success" >Sign Up</button>
-        </form>  
-        <form method="get" action="/login">
-         <button type="submit" class="btn btn-outline-primary ">Sign In</button>
-        </form> <%} else { %>
-          <form method = "get" action="/logout">
-            <button type = "submit" class="btn btn-outline-primary">Sign Out</button>
-          </form> 
-         
-        <li class="nav-item ">
-            <a class="nav-link" href="/store">Store</a>
-        </li>
-        <%} %>
+     
         
       </ul>
       
