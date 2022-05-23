@@ -1,4 +1,5 @@
 //getting an error while trying to shift the image posting form to some other link from index.ejs
+//hello finally connected with github
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
