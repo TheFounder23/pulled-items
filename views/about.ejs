@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +10,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
     <style>
       
       </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "css/about.css">
 </head>
 <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
     
-    
-    <%- include('./partial/navbar.ejs') %>
-    <%- include('./partial/navbarcent.ejs') %>
+    <%- include('./partial/navbar.ejs') -%>
     <h1>About</h1>
+   
+    <div class="card">
+      
+      <div class="card-body">
+        <!-- <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">write something about the comapany.</p> -->
+        
+      </div>
+    </div>
     <section class="about py-5" style = "padding: 6px !important;background-color: #e76f51">
         <div class="row align-items-center container my-5 mx-auto">
           <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
            
             <h2>View</h2>
             <p>
-              see the latest collection and design 
+              SEE THE LATEST COLLECTION AND DESIGNS
             </p>
           </div>
           <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
@@ -41,9 +54,9 @@
         <div class="row align-items-center container my-5 mx-auto">
           <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
            
-            <h2>Order</h2>
+            <h2>Design Yourselves</h2>
             <p>
-             Select items  you wish and add them to cart to post an order
+            You can post your dream design to be made
           </div>
           <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
             <img class="img-fluid" src="img/about-us-1.png" />
@@ -59,7 +72,7 @@
           
             <h2>Appointment</h2>
             <p>
-              Book an Appointment now or get a call from us by simply mentioning your phone number
+              BOOK AN APPOINTMENT BY GIVING US A CALL
             </p>
           </div>
           <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
@@ -68,6 +81,11 @@
           </div>
         </div>
       </section>
-   
+
+      <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+        
+     
+      
 </body>
 </html>

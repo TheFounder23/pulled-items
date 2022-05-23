@@ -12,10 +12,15 @@ const userSchema = new mongoose.Schema({
     name: String,
     username :{
         type :String,
-        required :true,
+        required :true, 
         unique:true
     },
-    password :String
+    password :String,
+    
+  
+   
 });
+
+
 
 exports.User = mongoose.model("User",userSchema)
