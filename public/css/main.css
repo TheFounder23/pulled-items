@@ -2,9 +2,22 @@
 html {
   scroll-behavior: smooth;
 }
+
+#sample
+{
+  padding-top: 35%;
+}
 .navbar
 {
+    
+    top: 0px;
+    left: -3px;
+    font-size: 18px;
   border-radius: 25px;
+  padding-left: 20%;
+  padding: 10px;
+  width: 11900px;
+  height: 50px;
 }
 #background-video {
     width: 100vw;
@@ -24,6 +37,9 @@ html {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  height: 500px;
+  min-height: 50%;
+  
  
   }
   body {

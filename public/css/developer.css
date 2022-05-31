@@ -1,3 +1,15 @@
+.navbar
+{
+    
+    top: 0px;
+    left: -2px;
+    font-size: 18px;
+    border-radius: 25px;
+  
+  padding: 10px;
+  width: 1900px;
+  height: 50px;
+}
 .devcontainer{
     color: whitesmoke;
     border: 2px solid green;

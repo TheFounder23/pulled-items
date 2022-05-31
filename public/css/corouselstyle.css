@@ -1,0 +1,23 @@
+/* #carouselExampleControls
+{
+    padding-top:50% ;
+   
+} */
+
+.carousel
+{
+
+   
+    height:12%;
+    width:100%;
+}
+
+.carousel button{
+    padding-top: 30%;   
+    width: 30%;
+}
+.carousel-item img {
+    
+        
+        min-height: 384px;
+    }

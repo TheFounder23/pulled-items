@@ -9,43 +9,34 @@
 
     <link rel = "stylesheet" href = "css/main.css">
     
-    <video id="background-video" autoplay loop muted poster="img/liveback.webm">
+    <!-- <video id="background-video" autoplay loop muted poster="img/liveback.webm">
         <source src="img/liveback.webm" type="video/webm">
-      </video>
+      </video> -->
 
 </head>
 <body>
-  <!-- <form action="/create_blog" method="post" enctype="multipart/form-data">
-    <div> <label for="title">Title</label>
-        <input type="text" name="title" id="title"> </div>
-    <div>
-        <label for="image">Image</label>
-        <input type="file" name="image" id="image">
-    </div>
-    <button type="submit">Add Blog</button>
-</form> -->
+  
     <%- include('./partial/navbar.ejs') %>
     <%- include('./partial/corousel.ejs') %>
+  
     
-
-    <section class="about py-5" style = "padding: 6px !important;background-color: #e76f51">
-        <div class="row align-items-center container my-5 mx-auto">
+<div id="sample" class="box-body">
+    <section class=" about  py-5 " id = "hello" style = "padding: 0px !important;background-color: #e76f51">
+        <div class="row d-inline align-items-center container my-5 mx-auto">
           <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
             <h2>About</h2>
             <p>
              We make all kinds of jewellery in gold and diamond
             </p>
           </div>
-          <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
-            <img class="img-fluid" src="img/about-us-1.png" />
-          </div>
+          
         </div>
       </section>
 
 
       
-      <section class="about py-5" style = " padding: 6px !important ;background-color: #d8e2dc">
-        <div class="row align-items-center container my-5 mx-auto">
+      <section class="about py-5"  id = "hello" style = " padding: 6px !important ;background-color: #d8e2dc">
+        <div class="row d-inline align-items-center container my-5 mx-auto">
           <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
             
             <h2>Speciality</h2>
@@ -53,28 +44,28 @@
               Our speciality in making light weight jewellery
             </p>
           </div>
-          <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
+          <!-- <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
             <img class="img-fluid" src="img/about-us-1.png" />
            
-          </div>
+          </div> -->
         </div>
       </section>
 
-      <section class="about py-5" style = "padding: 6px !important;background-color: #5181e7">
-        <div class="row align-items-center container my-5 mx-auto">
+      <section class="about py-5" id = "hello" style = "padding: 6px !important;background-color: #5181e7">
+        <div class="row d-inline align-items-center container my-5 mx-auto">
           <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
             <h2>Restore</h2>
             <p>
               Modification & upgradation of old as well as new jewellery as per customer requirement
             </p>
           </div>
-          <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
+          <!-- <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5 hov-anim-jelly">
             <img class="img-fluid" src="img/about-us-1.png" />
-          </div>
+          </div> -->
         </div>
       </section>
       
-      
+    </div>
    
 
       
@@ -82,8 +73,7 @@
      
       
       
-    <footer class="container footer">
-        © Copyright 2021 All Rights Reserved by developer
-    </footer>
+   
 </body>
+<%- include('./partial/footer.ejs') -%>
 </html>

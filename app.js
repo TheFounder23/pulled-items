@@ -1,12 +1,12 @@
 //getting an error while trying to shift the image posting form to some other link from index.ejs
-//hello finally connected with github
+//REMEMBER TO LINK THE DEVELPER PAGE AT THE FOOTER 
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
 const cloudinary = require('cloudinary');
-const passport = require('passport');
+// const passport = require('passport');
 const multer = require('multer');
-const {initializingPassport,isAuthenticated} = require("./passportConfig.js");
+// const {initializingPassport,isAuthenticated} = require("./passportConfig.js");
 const app = express();
 const port = 3000;
 var uploadModel = require("./upload.js");
@@ -28,7 +28,7 @@ require('./handler/cloudinary')
 const expressSession = require("express-session");
 const { render } = require('express/lib/response');
 const path = require('path');
-var test = require('./public/test');
+// var test = require('./public/test');
 
 // res.render('about', {
 //     utils: test
@@ -36,17 +36,17 @@ var test = require('./public/test');
 connectMongoose();
 
 
-initializingPassport(passport);
+// initializingPassport(passport);
 
 
-app.use(expressSession({secret : "secret",resave :false,
-saveUninitialized:false}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.get('*', function(req,res,next){
-    res.locals.user = req.user || null;
-    next();
-});
+// app.use(expressSession({secret : "secret",resave :false,
+// saveUninitialized:false}));
+// app.use(passport.initialize());
+// app.use(passport.session());
+// app.get('*', function(req,res,next){
+//     res.locals.user = req.user || null;
+//     next();
+// });
 
 app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -94,6 +94,16 @@ app.get('/ring',(req,res) =>{
   
 }) 
 
+app.get('/bangles',(req,res) =>{
+  res.render('bangles')
+  
+}) 
+app.get('/chains',(req,res) =>{
+  res.render('chains')
+  
+}) 
+
+
 app.get('/earring',(req,res) =>{
   res.render('earring')
   
@@ -113,10 +123,10 @@ app.get('/register',(req,res) =>{
     
 })
 
-app.get('/user',isAuthenticated,(req,res) =>{
-    res.render('user')
+// app.get('/user',isAuthenticated,(req,res) =>{
+//     res.render('user')
     
-})
+// })
 
 app.get('/collection',(req,res) =>{
   res.render('collection')
@@ -125,18 +135,18 @@ app.get('/collection',(req,res) =>{
 
 
 
-  app.get('/store', isAuthenticated,function(req, res) {
-    fs.readFile('items.json', function(error, data) {
-      if (error) {
-        res.status(500).end()
-      } else {
-        res.render('store.ejs', {
+  // app.get('/store', isAuthenticated,function(req, res) {
+  //   fs.readFile('items.json', function(error, data) {
+  //     if (error) {
+  //       res.status(500).end()
+  //     } else {
+  //       res.render('store.ejs', {
           
-          items: JSON.parse(data)
-        })
-      }
-    })
-  })
+  //         items: JSON.parse(data)
+  //       })
+  //     }
+  //   })
+  // })
 
   
 
@@ -144,24 +154,24 @@ app.get('/collection',(req,res) =>{
 //     res.send(req.user);
 // })
 
-app.get("/logout" ,isAuthenticated,(req,res) => {
-    req.logout();
-    res.redirect("/")
-})
+// app.get("/logout" ,isAuthenticated,(req,res) => {
+//     req.logout();
+//     res.redirect("/")
+// })
 
-app.post("/login",passport.authenticate("local",{failureRedirect: "/register",
- successRedirect : "/user"}),
-);
+// app.post("/login",passport.authenticate("local",{failureRedirect: "/register",
+//  successRedirect : "/user"}),
+// );
 
-app.post("/register",async (req,res) =>{
-    const user = await User.findOne({username: req.body.username});
+// app.post("/register",async (req,res) =>{
+//     const user = await User.findOne({username: req.body.username});
 
-    if(user) return res.status(400).send("user already exists");
+//     if(user) return res.status(400).send("user already exists");
 
-    const newUser = await User.create(req.body);
-    res.redirect("/login");
-    //  res.status(201).send(newUser);
-});
+//     const newUser = await User.create(req.body);
+//     res.redirect("/login");
+//     //  res.status(201).send(newUser);
+// });
 
 app.post('/upload', upload,function(req,res,next){
   var imageFile = req.file.filename;

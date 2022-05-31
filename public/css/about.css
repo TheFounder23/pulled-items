@@ -1,17 +1,82 @@
+
+h1 {
+	font-family: system-ui, sans-serif;
+	display: flex;
+	justify-content: left;
+	align-items: flex-start;
+	padding-top: 5%;
+	height: 50vh;
+	margin: 20;
+	padding-left:2%;
+	font-size: 480%;
+	font-weight: 500;
+	color: tomato;
+	
+	--x-offset: -0.0625em;
+	--y-offset: 0.0625em;
+	--stroke: 0.025em;
+	--background-color: white;
+	--stroke-color: lightblue;
+	
+	text-shadow: 
+	  
+	  var(--x-offset)
+	  var(--y-offset)
+	  0px
+	  var(--background-color), 
+	  
+	  calc( var(--x-offset) - var(--stroke) )
+	  calc( var(--y-offset) + var(--stroke) )
+	  0px
+	  var(--stroke-color);
+	
+  }
+  /* for browsers that support spread, added in
+  https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+  currently: none browsers! none of them!
+  I can't even find a test: 
+  https://wpt.fyi/results/css/css-text-decor */
+  @supports ( text-shadow: 1px 1px 1px 1px black ) {
+	h1 {
+	  text-shadow:
+		
+		var(--x-offset)
+		var(--y-offset)
+		0px
+		0px
+		var(--background-color), 
+		
+		var(--x-offset) 
+		var(--y-offset)
+		var(--stroke)
+		0px
+		var(--stroke-color);
+	  
+	}
+  }
+html,body {
+	background: linear-gradient(-45deg, #363535, #3e1291, #024158, #002c36);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 10vh;
+	
+	
+}
 body{
     background-color: #6a6a70;
     
 }
-
 .navbar
 {
-  border-radius: 25px;
-}
-body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 10vh;
+    
+    top: 0px;
+    left: -2px;
+    font-size: 18px;
+    border-radius: 25px;
+  
+  padding: 10px;
+  width: 11900px;
+  height: 50px;
 }
 
 @keyframes gradient {
@@ -22,6 +87,16 @@ body {
 		background-position: 50% 50%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 0% 50%; 
 	}
 }
+.card
+{
+	padding-top: 5%;
+}
+
+.helper
+{
+	padding-top: 5%;
+}
+

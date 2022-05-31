@@ -20,12 +20,15 @@ body {
 }
 .navbar
 {
-  border-radius: 25px;
-  background-color: black;
-  padding: var(--padding-15);
-  font-size: 20px;
-  border-radius: var(--radius-50);
-  width: 100%;
+    
+    top: 0px;
+    left: -2px;
+    font-size: 18px;
+    border-radius: 25px;
+  
+  padding: 10px;
+  width: 1900px;
+  height: 50px;
 }
 .wrapper {
   width: 100%;
@@ -159,4 +162,17 @@ body:before {
 .back:hover:after {
   bottom: 0;
   left: 0;
+}
+
+.container
+{
+ padding-top: 7%;
+}
+
+.design
+{
+  color:aqua;
+  font-size: 23px;
+  font-family: 'Nunito', sans-serif;
+  
 }
