@@ -235,5 +235,6 @@ app.post('/purchase',function(req,res){
   console.log(htmlData);
 });
 
+app.listen(process.env.PORT || 3000)
 
-app.listen(port,() => console.info(`listening on port ${port}`))
+// app.listen(port,() => console.info(`listening on port ${port}`))
