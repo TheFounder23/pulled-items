@@ -1,4 +1,4 @@
-.navbar
+/* .navbar
 {
     
     top: 0px;
@@ -9,8 +9,22 @@
   padding: 10px;
   width: 1900px;
   height: 50px;
+} */
+
+.navbar
+{
+    
+    top: 0px;
+    left: -2px;
+    font-size: 18px;
+    border-radius: 90px;
+  
+  padding: 10px;
+  width: 11900px;
+  height: 50px;
 }
-.devcontainer{
+
+/* .devcontainer{
     color: whitesmoke;
     border: 2px solid green;
     padding: 1rem;
@@ -21,10 +35,11 @@
 .devcontainer p {
     margin: 1rem 0.5rem;
     margin-top: 2rem;
-}
+} */
 
-.devimg{
-    width: 15%;
+img {
+    width: 35%;
+    height: 50%;
     border: 2px solid blue;
     border-radius: 5%;
 }
@@ -41,7 +56,7 @@
 
 #background-video {
     width: 100vw;
-    height: 100vh;
+    height:  100vh;
     object-fit: cover;
     position: fixed;
     left: 0;
