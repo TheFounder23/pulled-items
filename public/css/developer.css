@@ -54,7 +54,7 @@ img {
     height: 3rem;
 }
 
-#background-video {
+/* #background-video {
     width: 100vw;
     height:  100vh;
     object-fit: cover;
@@ -64,4 +64,4 @@ img {
     top: 0;
     bottom: 0;
     z-index: -1;
-  }
+  } */

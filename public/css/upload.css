@@ -7,18 +7,18 @@
   --button-background: #0575E6;
   --input-background: #e4eff8;
   --radius-50: 50px;
-  --padding-15: 15px;
+  --padding-15: 5px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 10vh;
   background: var(--start-color);
   background: linear-gradient(to right, var(--start-color), var(--end-color)) no-repeat;
   font-family: 'Nunito', sans-serif;
 }
-.navbar
+/* .navbar
 {
     
     top: 0px;
@@ -29,7 +29,7 @@ body {
   padding: 10px;
   width: 1900px;
   height: 50px;
-}
+} */
 .wrapper {
   width: 100%;
   height: 90%;
@@ -60,7 +60,7 @@ body {
   padding: var(--padding-15);
 }
 .wrapper .content footer input {
-  border: unset;
+  /* border: unset; */
   background-color: black;
   padding: var(--padding-15);
   font-size: 13px;
@@ -70,7 +70,7 @@ body {
 .wrapper .content footer button {
   background-color: var(--button-background);
   color: rgb(3, 3, 3);
-  border: unset;
+  /* border: unset; */
   width: 290px;
   border-radius: var(--radius-50);
   padding: var(--padding-15);
@@ -100,9 +100,9 @@ body {
 
 body,
 html{
-  height: 100%;
+  height: 110%;
   text-align: center;
-  font-size: 40px;
+  font-size: 23px;
   font-family: 'Nunito', sans-serif;
 }
 body:before,
@@ -119,11 +119,12 @@ body:before {
 .back:before,
 .back:after {
   cursor: pointer;
+  
   padding: 0.5em 2em;
   display: inline-block;
   background-color: rgb(8, 14, 95);
   color: rgb(112, 10, 146);
-  border-radius: 6px;
+  border-radius: 40px;
   position: relative;
   -webkit-transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
   transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
@@ -172,7 +173,7 @@ body:before {
 .design
 {
   color:aqua;
-  font-size: 23px;
+  font-size: 40px;
   font-family: 'Nunito', sans-serif;
   
 }
