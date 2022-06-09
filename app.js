@@ -21,7 +21,7 @@ const bodyParser = require('body-parser');
 require("dotenv").config();
 require('./handler/cloudinary')
 const expressSession = require("express-session");
-const { render } = require('express/lib/response');
+// const { render } = require('express/lib/response');
 const path = require('path');
 connectMongoose();
 app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
