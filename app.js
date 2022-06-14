@@ -116,12 +116,12 @@ app.get('/upload',function(req,res,next){
 })
 
 
-app.post('/purchase',function(req,res){
-  var username = req.body.username;
-  var htmlData = 'Hello:' + username;
+// app.post('/purchase',function(req,res){
+//   var username = req.body.username;
+//   var htmlData = 'Hello:' + username;
  
-  console.log(htmlData);
-});
+//   console.log(htmlData);
+// });
 
 app.listen(process.env.PORT || 3000)
 
