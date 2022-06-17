@@ -1,6 +1,7 @@
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
+const fetch = require("node-fetch");
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const app = express();
@@ -23,6 +24,7 @@ require('./handler/cloudinary')
 const expressSession = require("express-session");
 // const { render } = require('express/lib/response');
 const path = require('path');
+const { response } = require('express');
 connectMongoose();
 app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -38,6 +40,9 @@ app.set('view engine' , 'ejs')
 
 app.get('',(req,res) =>{ //doubt how is the index the root file and for the bout we have to do /about
     res.render('helper')
+})
+app.get('/rate',(req,res) =>{
+  res.render('rate')
 })
 app.get('/index',(req,res) =>{
   res.render('index')
@@ -115,13 +120,7 @@ app.get('/upload',function(req,res,next){
   })
 })
 
-
-// app.post('/purchase',function(req,res){
-//   var username = req.body.username;
-//   var htmlData = 'Hello:' + username;
- 
-//   console.log(htmlData);
-// });
+/
 
 app.listen(process.env.PORT || 3000)
 
