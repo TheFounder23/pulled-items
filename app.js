@@ -38,7 +38,7 @@ app.set('view engine' , 'ejs')
 
 
 
-app.get('',(req,res) =>{ //doubt how is the index the root file and for the bout we have to do /about
+app.get('',(req,res) =>{ 
     res.render('helper')
 })
 app.get('/rate',(req,res) =>{

@@ -67,36 +67,10 @@
       
     </div>     
   
-      <p id="gold">Present Gold rate of 10g and 24k</p>
-      
-      <p id="silver"></p>
+     
     
       
- <script>
 
-  var gold = document.getElementById("gold");
-  var silver = document.getElementById("silver");
-  const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'e7a0f1b42emshed5044437aabf25p19679ajsn83c9ce1fdf21',
-		'X-RapidAPI-Host': 'gold-and-silver-rate.p.rapidapi.com'
-	}
-};
-
-fetch('https://gold-and-silver-rate.p.rapidapi.com/', options)
-	.then(response => response.json())
-	.then(data =>{ 
-  
-      var au = data.goldmcx;
-      var ag  = data.silvermcx;
-       gold.innerHTML = au;
-       silver.innerHTML = ag;
-       console.log(au);
-       })
-	.catch(err => console.error(err));
-
-    </script> 
   
   
    

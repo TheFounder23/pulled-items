@@ -30,6 +30,19 @@ p{
 	  var(--stroke-color);
 	
   }
+
+  .navbar
+{
+    
+    top: 0px;
+    left: -2px;
+    font-size: 18px;
+    border-radius: 90px;
+  
+  padding: 10px;
+  width: 11900px;
+  height: 50px;
+}
   /* for browsers that support spread, added in
   https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
   currently: none browsers! none of them!
