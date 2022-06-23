@@ -11,9 +11,10 @@
 </head>
 <body>
     <%- include('./partial/navbar.ejs') %>
+    <p>You have exceeded your API limit</p>
     <p id="gold"></p>
     <p id="silver"></p>
-      
+    
       
     <script>
 
@@ -42,7 +43,7 @@ fetch('https://live-metal-prices.p.rapidapi.com/v1/latest/XAU_24K,XAG,PA,PL,GBP,
       
           </script>  
           <span>*The prices mentioned are per gram  , this price is not reliable</span>
-          <span>#For 22k and weighing 1gram  </span>
+          <span>#For 22K weighing 1gram  </span>
 </body>
 </body>
 <%- include('./partial/footer.ejs') -%>
