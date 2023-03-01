@@ -101,6 +101,7 @@ app.post('/upload', upload,function(req,res,next){
   var imageDetails = new uploadModel({
     imagename:imageFile
   });
+  
   imageDetails.save(function(err,doc){
     if(err) throw err;
   
