@@ -1,3 +1,4 @@
+//newclustergonjdbx-> test->upload images (route to the database which contains image after uploading)
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
@@ -120,8 +121,38 @@ app.get('/upload',function(req,res,next){
   res.render('sample',{title:'Upload File' ,records: data,success : ''});
   })
 })
+// const Sentry = require("@sentry/node");
+// // or use es6 import statements
+// // import * as Sentry from '@sentry/node';
 
-/
+// const Tracing = require("@sentry/tracing");
+// // or use es6 import statements
+// // import * as Tracing from '@sentry/tracing';
+
+// Sentry.init({
+//   dsn: "https://e92b9060664b419fa65e16fa7c930b1b@o4504897810071552.ingest.sentry.io/4504897822720000",
+
+//   // Set tracesSampleRate to 1.0 to capture 100%
+//   // of transactions for performance monitoring.
+//   // We recommend adjusting this value in production
+//   tracesSampleRate: 1.0,
+// });
+
+// const transaction = Sentry.startTransaction({
+//   op: "test",
+//   name: "My First Test Transaction",
+// });
+
+// setTimeout(() => {
+//   try {
+//     foo();
+//   } catch (e) {
+//     Sentry.captureException(e);
+//   } finally {
+//     transaction.finish();
+//   }
+// }, 99);
+
 
 app.listen(process.env.PORT || 3000)
 
