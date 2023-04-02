@@ -1,4 +1,6 @@
 //newclustergonjdbx-> test->upload images (route to the database which contains image after uploading)
+// "start": "nodemon app.js",
+    // "start:dev": "nodemon app.js"
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
