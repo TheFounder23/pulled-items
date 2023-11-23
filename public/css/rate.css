@@ -30,7 +30,10 @@ p{
 	  var(--stroke-color);
 	
   }
-
+h2
+{
+	color:black
+}
   .navbar
 {
     

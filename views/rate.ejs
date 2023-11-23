@@ -17,31 +17,32 @@
     
       
     <script>
-
+<span>API response limit has reached its maximum,hence rate cannot be displayed at the moment</span>
    
 
 
-    const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'e7a0f1b42emshed5044437aabf25p19679ajsn83c9ce1fdf21',
-		'X-RapidAPI-Host': 'live-metal-prices.p.rapidapi.com'
-	}
-};
+//     const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'e7a0f1b42emshed5044437aabf25p19679ajsn83c9ce1fdf21',
+// 		'X-RapidAPI-Host': 'live-metal-prices.p.rapidapi.com'
+// 	}
+// };
 
-fetch('https://live-metal-prices.p.rapidapi.com/v1/latest/XAU_24K,XAG,PA,PL,GBP,EUR/INR/gram', options)
-	.then(response => response.json())
-    .then(data =>{ 
+// fetch('https://live-metal-prices.p.rapidapi.com/v1/latest/XAU_24K,XAG,PA,PL,GBP,EUR/INR/gram', options)
+// 	.then(response => response.json())
+//     .then(data =>{ 
         
-        var au =   "Current Rate of Gold" + " :₹" +  data.rates.XAU_24K + "#";
-        var ag  = "Current Rate of Silver" + ": ₹" + data.rates.XAG + "*";
-         gold.innerHTML = au;
-         silver.innerHTML = ag;
-         console.log(au);
-         })
-      .catch(err => console.error(err));
+//         var au =   "Current Rate of Gold" + " :₹" +  data.rates.XAU_24K + "#";
+//         var ag  = "Current Rate of Silver" + ": ₹" + data.rates.XAG + "*";
+//          gold.innerHTML = au;
+//          silver.innerHTML = ag;
+//          console.log(au);
+//          })
+//       .catch(err => console.error(err));
       
           </script>  
+
           <span>*Note:The prices mentioned may vary</span>
           <span>#For 22K weighing 1gram  </span>
 </body>
