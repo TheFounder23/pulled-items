@@ -1,6 +1,6 @@
 //newclustergonjdbx-> test->upload images (route to the database which contains image after uploading)
 // "start": "nodemon app.js",
-    // "start:dev": "nodemon app.js"
+ // "start:dev": "nodemon app.js"
 const express= require('express');
 const { connect } = require('mongoose');
 const fs = require('fs')
@@ -38,8 +38,6 @@ app.use('/js',express.static(__dirname + 'public/js'))
 app.use('/img',express.static(__dirname + 'public/img'))
 app.set('views','./views')
 app.set('view engine' , 'ejs')
-
-
 
 app.get('',(req,res) =>{ 
     res.render('helper')
@@ -96,8 +94,6 @@ app.get('/collection',(req,res) =>{
   
 })
 
-
-
 app.post('/upload', upload,function(req,res,next){
   var imageFile = req.file.filename;
   var success = req.file.fieldname + "uploaded successfully";
@@ -111,9 +107,7 @@ app.post('/upload', upload,function(req,res,next){
     imageData.exec(function(err,data){
       if(err) throw err;
       res.render('sample',{title:'Upload File',records: data,success: success});
-    })
-
-    
+    })  
   })  
 })
 
