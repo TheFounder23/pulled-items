@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "css/rate.css">
-   
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel = "stylesheet" href = "css/rate.css">
+    <!-- Your meta tags, stylesheets, and other head content here -->
+    <title>Gold and Silver Rates</title>
+    <style>
+        /* CSS styles for gold and silver rates */
+        .rate {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .gold {
+            color: #FFD700; /* Gold color */
+        }
+        .silver {
+            color: #C0C0C0; /* Silver color */
+        }
+    </style>
 </head>
 <body>
-    <%- include('./partial/navbar.ejs') %>
-    <!-- <p>You have exceeded your API limit</p> -->
+  <%- include('./partial/navbar.ejs') %>
+  <p class="rate gold" id="gold"></p>
+    <p class="rate silver" id="silver"></p>
+    <!-- Your HTML body content here -->
     <p id="gold"></p>
     <p id="silver"></p>
-    
-      
+
     <script>
-<span>API response limit has reached its maximum,hence rate cannot be displayed at the moment</span>
-   
+        const url = 'https://live-metal-prices.p.rapidapi.com/v1/latest/XAU_24K,XAG,PA,PL,GBP,EUR/INR/gram';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'abe39014d1msh2ee47ab5250c29cp18515djsnd2b7c3b11df6',
+                'X-RapidAPI-Host': 'live-metal-prices.p.rapidapi.com'
+            }
+        };
 
-
-    const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'abe39014d1msh2ee47ab5250c29cp18515djsnd2b7c3b11df6',
-		'X-RapidAPI-Host': 'live-metal-prices.p.rapidapi.com'
-	}
-};
-
-fetch('https://live-metal-prices.p.rapidapi.com/v1/latest/XAU_24K,XAG,PA,PL,GBP,EUR/INR/gram', options)
-	.then(response => response.json())
-    .then(data =>{ 
-        
-        var au =   "Current Rate of Gold" + " :₹" +  data.rates.XAU_24K + "#";
-        var ag  = "Current Rate of Silver" + ": ₹" + data.rates.XAG + "*";
-         gold.innerHTML = au;
-         silver.innerHTML = ag;
-         console.log(au);
-         })
-      .catch(err => console.error(err));
-      
-          </script>  
-
-          <span>*Note:The prices mentioned may vary</span>
-          <span>#For 22K weighing 1gram  </span>
+        console.log("Fetching data...");
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+                return response.json(); // Parse response as JSON
+            })
+            .then(data => {
+                const au = "Current Rate of Gold: ₹" + data.rates.XAU_24K + " per gram";
+                const ag = "Current Rate of Silver: ₹" + data.rates.XAG + " per gram";
+                document.getElementById('gold').innerHTML = au;
+                document.getElementById('silver').innerHTML = ag;
+                console.log(au);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('gold').innerHTML = "Error fetching gold rate";
+                document.getElementById('silver').innerHTML = "Error fetching silver rate";
+            });
+    </script>
+    <span>*The prices mentioned are per gram, this price is not reliable</span>
+    <span>#For 22K weighing 1 gram</span>
 </body>
-</body>
-<%- include('./partial/footer.ejs') -%>
-
 </html>
